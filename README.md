@@ -1,11 +1,6 @@
 
 # historicalborrow
 
-[![check](https://github.com/wlandau/historicalborrow/workflows/check/badge.svg)](https://github.com/wlandau/historicalborrow/actions?query=workflow%3Acheck)
-[![cover](https://github.com/wlandau/historicalborrow/workflows/test-coverage/badge.svg)](https://github.com/wlandau/historicalborrow/actions?query=workflow%3Atest-coverage)
-[![pkgdown](https://github.com/wlandau/historicalborrow/workflows/pkgdown/badge.svg)](https://github.com/wlandau/historicalborrow/actions?query=workflow%3Apkgdown)
-[![lint](https://github.com/wlandau/historicalborrow/workflows/pkgdown/badge.svg)](https://github.com/wlandau/historicalborrow/actions?query=workflow%3Alint)
-
 Historical borrowing in clinical trials can improve precision and
 operating characteristics. This package supports a hierarchical model
 and a mixture model to borrow historical control data from other studies
@@ -22,11 +17,11 @@ remotes::install_github("wlandau/historicalborrow")
 
 ## Documentation
 
--   Functions: <https://wlandau.github.io/historicalborrow/reference/>
--   Methods:
-    <https://wlandau.github.io/historicalborrow/articles/methods.html>
--   Usage:
-    <https://wlandau.github.io/historicalborrow/articles/usage.html>
+- Functions: <https://wlandau.github.io/historicalborrow/reference/>
+- Methods:
+  <https://wlandau.github.io/historicalborrow/articles/methods.html>
+- Usage:
+  <https://wlandau.github.io/historicalborrow/articles/usage.html>
 
 ## Thanks
 
@@ -34,8 +29,7 @@ remotes::install_github("wlandau/historicalborrow")
 Albert, [Faith Bian](https://github.com/faithbian-lilly), and [Saptarshi
 Chatterjee](https://github.com/schatterjee-lilly) contributed to the
 development of the methods prior to implementation. Phebe Kemmer,
-Heather Zhao, and Zhangchen Zhao also provided helpful feedback on the
-models and their application to clinical use-cases.
+Heather Zhao, and Zhangchen Zhao reviewed and provided helpful feedback.
 
 ## Code of Conduct
 
@@ -46,6 +40,6 @@ By contributing to this project, you agree to abide by its terms.
 
 ## References
 
--   Viele, Kert and Berry, Scott and Neuenschwander, Beat et al. “Use of
-    historical control data for assessing treatment effects in clinical
-    trials.” Pharmaceutical Statistics 1(13), 2013.
+- Viele, Kert and Berry, Scott and Neuenschwander, Beat et al. “Use of
+  historical control data for assessing treatment effects in clinical
+  trials.” Pharmaceutical Statistics 1(13), 2013.

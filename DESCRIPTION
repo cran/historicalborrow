@@ -8,7 +8,7 @@ Description: Historical borrowing in clinical trials can improve
   the amount of borrowing through benchmark models (independent
   and pooled). Some of the methods are discussed by
   Viele et al. (2013) <doi:10.1002/pst.1589>.
-Version: 1.0.4
+Version: 1.1.0
 License: MIT + file LICENSE
 URL: https://wlandau.github.io/historicalborrow/,
         https://github.com/wlandau/historicalborrow
@@ -18,7 +18,7 @@ Authors@R: c(
     given = c("William", "Michael"),
     family = "Landau",
     role = c("aut", "cre"),
-    email = "will.landau@gmail.com",
+    email = "will.landau.oss@gmail.com",
     comment = c(ORCID = "0000-0003-1878-3253")
   ),
   person(
@@ -39,13 +39,13 @@ Encoding: UTF-8
 Language: en-US
 VignetteBuilder: knitr
 Config/testthat/edition: 3
-RoxygenNote: 7.2.1
+RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2022-09-12 12:46:56 UTC; c240390
+Packaged: 2024-09-10 12:24:16 UTC; C240390
 Author: William Michael Landau [aut, cre]
     (<https://orcid.org/0000-0003-1878-3253>),
   Albert Man [rev],
   Eli Lilly and Company [cph]
-Maintainer: William Michael Landau <will.landau@gmail.com>
+Maintainer: William Michael Landau <will.landau.oss@gmail.com>
 Repository: CRAN
-Date/Publication: 2022-09-13 10:20:10 UTC
+Date/Publication: 2024-09-10 15:00:08 UTC

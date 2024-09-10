@@ -1,4 +1,4 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 library(historicalborrow)
 library(dplyr)
 library(posterior)
@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
 )
 set.seed(0)
 
-## ---- paged.print = FALSE-----------------------------------------------------
+## ----paged.print = FALSE------------------------------------------------------
 library(historicalborrow)
 library(dplyr)
 set.seed(0)
@@ -179,6 +179,19 @@ summary_hierarchical <- hb_summary(
 summary_hierarchical
 
 ## -----------------------------------------------------------------------------
+hb_ess(
+  mcmc_pool = mcmc_pool,
+  mcmc_hierarchical = mcmc_hierarchical,
+  data = data,
+  response = "outcome",
+  study = "trial",
+  study_reference = "trial3",
+  group = "arm",
+  group_reference = "arm1",
+  patient = "subject"
+)
+
+## -----------------------------------------------------------------------------
 summary_pool <- hb_summary(
   mcmc = mcmc_pool,
   data = data,
@@ -228,27 +241,27 @@ hb_metrics(
   independent = summary_independent
 )
 
-## -----------------------------------------------------------------------------
+## ----borrow1------------------------------------------------------------------
 hb_plot_borrow(
   borrow = summary_hierarchical,
   pool = summary_pool,
   independent = summary_independent
 )
 
-## -----------------------------------------------------------------------------
+## ----borrow2------------------------------------------------------------------
 hb_plot_borrow(
   borrow = summary_mixture,
   pool = summary_pool,
   independent = summary_independent
 )
 
-## -----------------------------------------------------------------------------
+## ----group--------------------------------------------------------------------
 hb_plot_group(
   borrow = summary_mixture,
   pool = summary_pool,
   independent = summary_independent
 )
 
-## -----------------------------------------------------------------------------
+## ----tau----------------------------------------------------------------------
 hb_plot_tau(mcmc_hierarchical)
 

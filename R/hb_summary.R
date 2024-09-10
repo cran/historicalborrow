@@ -3,20 +3,8 @@
 #' @family summary
 #' @description Summarize a fitted model in a table.
 #' @details The `hb_summary()` function post-processes the results from
-#'   the model. It accepts MCMC samples of parameters and returns
-#'   interpretable group-level posterior summaries such as change
-#'   from baseline response and treatment effect. To arrive at these
-#'   summaries, `hb_summary()` computes marginal posteriors of
-#'   transformed parameters. The transformations derive patient-level
-#'   fitted values from model parameters, then derive group-level
-#'   responses as averages of fitted values. We refer to this style
-#'   of estimation as "unconditional estimation", as opposed to
-#'   "conditional estimation", which takes each group mean to be the
-#'   appropriate linear combination of the relevant `alpha` and `delta`
-#'   parameters, without using `beta` components or going through fitted
-#'   values. If the baseline covariates are balanced across studies,
-#'   unconditional and conditional estimation should produce similar
-#'   estimates of placebo and treatment effects.
+#'   the model. It estimates marginal means of the response,
+#'   treatment effect, and other quantities of interest.
 #' @return A tidy data frame with one row per group (e.g. treatment arm)
 #'   and the columns in the following list. Unless otherwise specified,
 #'   the quantities are calculated at the group level.
@@ -161,8 +149,7 @@ hb_summary <- function(
     mcmc = mcmc,
     data = data,
     x_alpha = x_alpha,
-    x_delta = x_delta,
-    x_beta = x_beta
+    x_delta = x_delta
   )
   samples_diff <- get_samples_diff(samples_response)
   samples_sigma <- get_samples_sigma(mcmc)
@@ -197,19 +184,16 @@ hb_summary <- function(
   dplyr::select(out, group, group_label, tidyselect::everything())
 }
 
-get_samples_response <- function(mcmc, data, x_alpha, x_delta, x_beta) {
+get_samples_response <- function(mcmc, data, x_alpha, x_delta) {
   index_max <- data$study == max(data$study)
   data <- data[index_max,, drop = FALSE] # nolint
   x_alpha <- x_alpha[index_max,, drop = FALSE] # nolint
   x_delta <- x_delta[index_max,, drop = FALSE] # nolint
-  x_beta <- x_beta[index_max,, drop = FALSE] # nolint
   alpha <- t(as.matrix(mcmc[, grepl("^alpha", colnames(mcmc)), drop = FALSE]))
   delta <- t(as.matrix(mcmc[, grepl("^delta", colnames(mcmc)), drop = FALSE]))
-  beta <- t(as.matrix(mcmc[, grepl("^beta", colnames(mcmc)), drop = FALSE]))
   gc()
   x_alpha <- Matrix::Matrix(x_alpha, sparse = TRUE)
   x_delta <- Matrix::Matrix(x_delta, sparse = TRUE)
-  x_beta <- Matrix::Matrix(x_beta, sparse = TRUE)
   gc()
   fitted <- x_alpha %*% alpha
   rm(alpha)
@@ -218,10 +202,6 @@ get_samples_response <- function(mcmc, data, x_alpha, x_delta, x_beta) {
   fitted <- fitted + x_delta %*% delta
   rm(delta)
   rm(x_delta)
-  gc()
-  fitted <- fitted + x_beta %*% beta
-  rm(beta)
-  rm(x_beta)
   gc()
   groups <- tibble::tibble(
     study = data$study,

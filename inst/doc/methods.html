@@ -49,7 +49,7 @@ overflow: visible;
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,7 +60,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -148,6 +148,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; }
 div.csl-bib-body { }
 div.csl-entry {
 clear: both;
+margin-bottom: 0em;
 }
 .hanging div.csl-entry {
 margin-left:2em;
@@ -452,12 +453,13 @@ control group in a particular study. Likewise, <span class="math inline">\(X_\de
 such that each scalar component of <span class="math inline">\(\delta\)</span> is the mean response of a
 non-control treatment group in a particular study.</p>
 <p>To illustrate, let <span class="math inline">\(y_{ijk}\)</span> be
-patient <span class="math inline">\(i\)</span> in treatment group <span class="math inline">\(j\)</span> (where <span class="math inline">\(j =
-1\)</span> is the control group) of study <span class="math inline">\(k\)</span>, and let <span class="math inline">\(\left ( X_\beta \beta \right )_{ijk}\)</span> be
+the response of patient <span class="math inline">\(k\)</span> in study
+<span class="math inline">\(i\)</span> in treatment group <span class="math inline">\(j\)</span> (where <span class="math inline">\(j =
+1\)</span> is the control group), and let <span class="math inline">\(\left ( X_\beta \beta \right )_{ijk}\)</span> be
 the corresponding scalar element of the vector <span class="math inline">\(X_\beta \beta\)</span>. Then,</p>
 <p><span class="math display">\[
 \begin{aligned}
-E(y_{ijk}) = I (j = 1) \alpha_{k} + I (j &gt; 1) \delta_{jk} + \left (
+E(y_{ijk}) = I (j = 1) \alpha_{i} + I (j &gt; 1) \delta_{ij} + \left (
 X_\beta \beta \right )_{ijk}
 \end{aligned}
 \]</span></p>
@@ -687,7 +689,7 @@ model.</p>
 <h2><span class="header-section-number">2.1</span> Effective sample size
 (ESS)</h2>
 <p>See the <code>hb_ess()</code> function for an implementation.</p>
-<p><span class="citation">Neuenschwander et al. (2006)</span> posit a
+<p><span class="citation">Neuenschwander et al. (2010)</span> posit a
 prior effective sample size metric for meta-analytic predictive (MAP)
 priors. In the original paper, the underlying hierarchical model only
 uses historical controls, and the hypothetical new study is the current
@@ -699,7 +701,7 @@ scale as in the paper.</p>
 <p>For the pooled model, define <span class="math inline">\(V_0\)</span>
 to be the posterior predictive variance of the control mean <span class="math inline">\(\alpha^*\)</span> of a hypothetical new unobserved
 study. According to <span class="citation">Neuenschwander et al.
-(2006)</span>, it can be derived as an average of study-specific
+(2010)</span>, it can be derived as an average of study-specific
 variances. In practice, we estimate <span class="math inline">\(V_0\)</span> using the average of MCMC samples of
 <span class="math inline">\(\frac{1}{\sum \sigma_i^{-2}}\)</span>.</p>
 <p><span class="math display">\[
@@ -812,7 +814,7 @@ i)\)</span>, and it is obtained by averaging posterior samples of <span class="m
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="unnumbered">References</h1>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-gelman2006" class="csl-entry">
 Gelman, A. 2006. <span>“Prior Distributions for Variance Parameters in
 Hierarchical Models.”</span> <em><span>B</span>ayesian
@@ -830,9 +832,9 @@ Lsmeans.”</span> <em>Journal of Statistical Software</em> 69 (1): 1–33.
 </div>
 <div id="ref-neuenschwander2010" class="csl-entry">
 Neuenschwander, B., G. Capkun-Niggli, M. Branson, and D. J.
-Spiegelhalter. 2006. <span>“Summarizing Historical Information on
-Controls in Clinical Trials.”</span> <em><span>B</span>ayesian
-<span>A</span>nalysis</em> 1 (3): 515–43. <a href="https://doi.org/10.1214/06-BA117A">https://doi.org/10.1214/06-BA117A</a>.
+Spiegelhalter. 2010. <span>“Summarizing Historical Information on
+Controls in Clinical Trials.”</span> <em><span>C</span>linical
+<span>T</span>rials</em> 7 (1): 5–18. <a href="https://doi.org/10.1177/1740774509356002">https://doi.org/10.1177/1740774509356002</a>.
 </div>
 </div>
 </div>

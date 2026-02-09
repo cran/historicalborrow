@@ -1,4 +1,4 @@
-2e6bb9aec4b2cfd23880c9431065d1f4 *DESCRIPTION
+85d4ce276a2a296f5ea7431bd188d575 *DESCRIPTION
 b218ea0b66a403e0a89f18a6ae83d998 *LICENSE
 d9982c28e5e3aeefe043189c7a596678 *NAMESPACE
 1d9c8f4c8fa5da7b7b7be55dd3cad182 *R/hb_convergence.R
@@ -26,14 +26,14 @@ faa6bcfd6ff17a8b91b2390508d7b115 *R/hb_sim_hierarchical.R
 45ea8f3f37b4f0d7f034dc32cf5c822d *R/utils_matrix.R
 530fc2afcd9ce0af4577e28b3de54529 *R/utils_sim.R
 a7d92a0d55b797196b7f2b354fe70ea0 *README.md
-44ca30344364255dccb669ac8486bb0f *build/vignette.rds
+bb73194d3afff1ef7e8091ed8b9378f4 *build/vignette.rds
 42ab7f547e10c2e79f1726a6d3fb256d *inst/WORDLIST
 11ee8abeb806a028639ea254c886c0e9 *inst/doc/methods.R
-d854960dc07ea4ba5876cbaaf7e77227 *inst/doc/methods.Rmd
-af80e8455267645435c6d373ce453dce *inst/doc/methods.html
+137606c9d5b5dcc9d88543ce009a729d *inst/doc/methods.Rmd
+8b376becf9a000294476ca69debb5b7e *inst/doc/methods.html
 00807f1a62c3614ede566a33eeebaed7 *inst/doc/usage.R
 0b223e69e8a08c2f3ac365e0a31258b0 *inst/doc/usage.Rmd
-0a674ef2ba684b4022803e02cf45591f *inst/doc/usage.html
+59bbe825f8fc5ff8c34888edec5900fa *inst/doc/usage.html
 aaf1df757e948edf563773fe693e0e8d *inst/jags/hierarchical_beta.jags
 fb59bfcc27b4b68a64e1dbb640db7879 *inst/jags/hierarchical_nobeta.jags
 30323863fbe8799f7cb7dcdb441350a1 *inst/jags/independent_beta.jags
@@ -65,7 +65,7 @@ dbd49a935824ca8b901174fd0cce5846 *man/hb_sim_hierarchical.Rd
 f0d6777eb2859efc7603506b3cdb77fd *tests/testthat.R
 0d4876c4646ef020afdc88473ce3be7d *tests/testthat/test-hb_convergence.R
 0eeda377039861e634a4e75cff1b53bf *tests/testthat/test-hb_data.R
-5ecb0699403f4117a446eb293b819160 *tests/testthat/test-hb_ess.R
+d1fdf8169839f612b010c0aa651c3505 *tests/testthat/test-hb_ess.R
 63c0f0939b7a7a0fcb214808ea38f361 *tests/testthat/test-hb_mcmc_hierarchical.R
 69107c5e4ff7e8a2260b7a1429ce5db9 *tests/testthat/test-hb_mcmc_independent.R
 760098c02c8a1e0209ee098eaf9e9be4 *tests/testthat/test-hb_mcmc_mixture.R
@@ -84,6 +84,6 @@ cd2ecf166d637ece5a3a272d31c9e560 *tests/testthat/test-hb_sim_independent.R
 553623a7fecaa7e3e3c061c82979bae7 *tests/testthat/test-utils_assert.R
 393c773409a353ab62922f704f8cd7bd *tests/testthat/test-utils_logic.R
 f9cf58d7277892d2b786a443963c6b8d *tests/testthat/test-utils_matrix.R
-b40b9a6fbe607505cc6091058d116336 *vignettes/bibliography.bib
-d854960dc07ea4ba5876cbaaf7e77227 *vignettes/methods.Rmd
+cb9e662f2bbc617a2400ad9446749d07 *vignettes/bibliography.bib
+137606c9d5b5dcc9d88543ce009a729d *vignettes/methods.Rmd
 0b223e69e8a08c2f3ac365e0a31258b0 *vignettes/usage.Rmd
